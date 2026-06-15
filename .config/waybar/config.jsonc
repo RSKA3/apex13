@@ -1,0 +1,37 @@
+{
+  "layer": "top",
+  "height": 32, // change the lenght of the modules
+  "spacing": 4,
+    "include": [
+  	    "./modules/battery.jsonc",
+	    "./modules/connections.jsonc",
+	    "./modules/audio.jsonc",
+	    "./modules/idle-inhibitor.jsonc",
+	    "./modules/distro.jsonc",
+	    "./modules/system.jsonc",
+	    "./modules/player.jsonc",
+	    "./modules/clock.jsonc",
+	    "./modules/brightness.jsonc",
+	    "./modules/music.jsonc",
+	    "./modules/groups.jsonc"
+    ],
+    "modules-left": [
+    	"custom/distro",
+    	"niri/workspaces",
+    	"group/system"
+    ],
+    "modules-center": [
+    	"mpris"
+        // "idle_inhibitor"
+    ],
+    "modules-right": [
+        "group/connections",
+        "group/screen",
+        "group/audio",
+        "battery",
+        "clock"
+    ],
+	"niri/workspaces": {
+	  "format": "{index}"
+	}
+}

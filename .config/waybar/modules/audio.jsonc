@@ -1,0 +1,20 @@
+{
+  "wireplumber": {
+      "format": " {icon} {volume}% ",
+      "format-muted": "  Muted ",
+      "format-icons": ["", "", " "],
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+      "on-click-right": "alacritty -e wiremix --tab output" // change to playback?
+  },
+  "wireplumber#microphone": {
+      "format": "  {volume}%",
+      "format-muted": "  Muted",
+      "node-type": "Audio/Source",
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+      "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
+      "on-click-right": "alacritty -e wiremix --tab input"
+  }
+}

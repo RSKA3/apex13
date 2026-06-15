@@ -1,0 +1,11 @@
+keymap:
+  - name: Firefox Specific Remaps
+    application:
+      only: firefox
+    remap:
+      Ctrl-j: CONTROL_L-pageup
+      Ctrl-semicolon: CONTROL_L-pagedown
+      Ctrl-Alt-j: Alt-left 
+      Ctrl-Alt-semicolon: Alt-right
+      Ctrl-k: down 
+      Ctrl-l: up

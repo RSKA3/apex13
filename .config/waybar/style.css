@@ -1,0 +1,16 @@
+@import "tokens/workspace.css";
+@import "tokens/batt-clock.css";
+@import "tokens/widget.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  min-height: 0px;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+window#waybar {
+  background: transparent;
+}

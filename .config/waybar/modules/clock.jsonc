@@ -1,0 +1,8 @@
+{
+  "clock": {
+    "timezone": "Europe/Helsinki",
+    "format": "{:%H.%M}",
+    "format-alt": "{:%d %B %Y}",
+    "tooltip": false
+  }
+}
