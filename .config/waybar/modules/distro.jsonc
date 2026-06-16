@@ -2,6 +2,6 @@
   "custom/distro": {
     "format": "",
     "tooltip": false,
-    "on-click": "/home/rasmus/.config/rofi/scripts/launcher.sh"
+    "on-click": "~/.config/rofi/scripts/launcher"
   }
 }
