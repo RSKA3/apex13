@@ -1,0 +1,7 @@
+[mgr]
+prepend_keymap = [
+	{ on = "j", run = "leave", desc = "Go back to the previous directory." },
+	{ on = "k", run = "arrow next", desc = "Go to the next item, or the top if the cursor is at the bottom." },
+	{ on = "l", run = "arrow prev", desc = "Go to the previous item, or the bottom if the cursor is at the top." },
+	{ on = "ö", run = "enter", desc = "Enter the child directory." }
+]
