@@ -4,35 +4,22 @@ spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-sh-at-startup "/usr/bin/xremap --device /dev/input/event3 $HOME/.config/xremap/config.yml"
 
 input {
-    keyboard {
-        xkb {
-            layout "fi"
+	keyboard {
+	xkb {
+		layout "fi"
         }
-    }
-    touchpad {
-    	tap
-    	natural-scroll
-    }
+	}
+	touchpad {
+		tap
+		natural-scroll
+	}
 }
 
 output "eDP-1" {
-    mode "1920x1080@60.033"
-    scale 1.25
-    position x=192 y=1080
+	mode "1920x1080@60.033"
+	scale 1.25
+	position x=192 y=1080
 }
-
-output "HDMI-A-2" {
-    mode "1920x1080@60.000"
-    scale 1
-    position x=0 y=0
-}
-
-// 
-// output "DP-1" {
-// 	mode "2560x1440@59.951"
-// 	scale 1
-// 	position x=0 y=0
-// }
 
 layout {
 	gaps 16
@@ -60,8 +47,8 @@ layout {
 
 // push background to overview 
 layer-rule {
-    match namespace="^wallpaper$"
-    place-within-backdrop true
+	match namespace="^wallpaper$"
+	place-within-backdrop true
 }
 
 // rounded corners 
@@ -72,23 +59,23 @@ window-rule {
 }
 // Don't draw background for alacritty, needed for transparency
 window-rule {
-    match app-id="Alacritty"
-    draw-border-with-background false
+	match app-id="Alacritty"
+	draw-border-with-background false
 
-    background-effect {
-        blur false
-    }
+	background-effect {
+		blur false
+	}
 }
 
 window-rule {
-    match app-id="Alacritty"
-    draw-border-with-background false
+	match app-id="Alacritty"
+	draw-border-with-background false
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
+	match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+	open-floating true
 }
     
 hotkey-overlay {
@@ -103,7 +90,8 @@ binds {
 
 	// Terminal / Application / Menu / Lock screen
 	Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-	Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/scripts/launcher"; }
+	Mod+B hotkey-overlay-title="Open a browser: helium" { spawn "helium-browser"; }
+  Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/scripts/launcher"; }
 	Mod+Escape hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
 
 	// Audio / Sound 
@@ -117,33 +105,33 @@ binds {
 	XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
 	// Toggle overview (four-finger swipe)
-    Mod+O repeat=false { toggle-overview; }
+	Mod+O repeat=false { toggle-overview; }
 	
 	// Close window
-    Mod+Q repeat=false { close-window; }
+	Mod+Q repeat=false { close-window; }
 
 	// Moving around windows
-	Mod+Left  				{ focus-column-left; }
-	Mod+Down  				{ focus-window-up; }
-	Mod+Up    				{ focus-window-down; }
-	Mod+Right 				{ focus-column-right; }
-	Mod+J     				{ focus-column-left; }
-	Mod+K     				{ focus-window-down; }
-	Mod+L     				{ focus-window-up; }
-	Mod+odiaeresis     		{ focus-column-right; }
+	Mod+Left  			  { focus-column-left; }
+	Mod+Down  			  { focus-window-up; }
+	Mod+Up    			  { focus-window-down; }
+	Mod+Right 			  { focus-column-right; }
+	Mod+J     			  { focus-column-left; }
+	Mod+K     			  { focus-window-down; }
+	Mod+L     			  { focus-window-up; }
+	Mod+odiaeresis    { focus-column-right; }
 
-	Mod+Shift+Left  		{ move-column-left; }
-	Mod+Shift+Down  		{ move-window-up; }
-	Mod+Shift+Up    		{ move-window-down; }
-	Mod+Shift+Right 		{ move-column-right; }
-	Mod+Shift+J     		{ move-column-left; }
-	Mod+Shift+K     		{ move-window-down; }
-	Mod+Shift+L     		{ move-window-up; }
+	Mod+Shift+Left  		  { move-column-left; }
+	Mod+Shift+Down  		  { move-window-up; }
+	Mod+Shift+Up    		  { move-window-down; }
+	Mod+Shift+Right 		  { move-column-right; }
+	Mod+Shift+J     		  { move-column-left; }
+	Mod+Shift+K     		  { move-window-down; }
+	Mod+Shift+L     		  { move-window-up; }
 	Mod+Shift+odiaeresis 	{ move-column-right; }
 
 	// Mouse
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+	Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+	Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
 
 	// Move between workspaces
 	Mod+1 { focus-workspace 1; }
@@ -155,24 +143,24 @@ binds {
 	Mod+Shift+2 { move-window-to-workspace 2; }
 	Mod+Shift+3 { move-window-to-workspace 3; }
 
-    Mod+R { switch-preset-column-width; }
+	Mod+R { switch-preset-column-width; }
 	
-	Mod+F { maximize-column; }
+	Mod+F       { maximize-column; }
 	Mod+Shift+F { fullscreen-window; }
-	Mod+Ctrl+F { expand-column-to-available-width; }
+	Mod+Ctrl+F  { expand-column-to-available-width; }
 	
 	// Consume one window from the right to the bottom of the focused column.
 	Mod+Comma  { consume-window-into-column; }
 	// Expel the bottom window from the focused column to the right.
 	Mod+Period { expel-window-from-column; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+	Print       { screenshot; }
+	Ctrl+Print  { screenshot-screen; }
+	Alt+Print   { screenshot-window; }
 
-    // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+	// Move the focused window between the floating and the tiling layout.
+	Mod+V       { toggle-window-floating; }
+	Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
 	// The quit action will show a confirmation dialog to avoid accidental exits.
 	Mod+Shift+E { quit; }

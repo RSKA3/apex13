@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 
 # Define the options with Nerd Font icons
-programs='󰵆 Programs'
-files='󱔘 Files'
-power_menu=' Power Menu'
-utilities='󰭔 Utilities'
-calculator='󰪚 Calculator'
-clipboard='🗎 Clipboard'
-keybindings='󰌌 Keybindings'
-documentation='󰈙 Documentation'
+programs='󰀻  Programs'
+files='󱔘  Files'
+power_menu='  Power'
+setup='  Setup'
+utilities='󰧸  Utilities'
+keybindings='󰌌  Keybindings'
+documentation='󰈙  Documentation'
 
 # Combine options with newline characters
-options="$programs\n$files\n$power_menu\n$utilities\n$calculator\n$clipboard\n$keybindings\n$documentation"
+options="$programs\n$files\n$power_menu\n$setup\n$utilities\n$keybindings\n$documentation"
 
 # Pass options to rofi
-choice=$(echo -e "$options" | rofi -dmenu -i -p "Main Menu")
+choice=$(echo -e "$options" | rofi -dmenu -i -p "Go...")
 [ $? = 0 ] || exit
 
 # Handle choices based on variables
@@ -28,6 +27,9 @@ case "$choice" in
     	"$power_menu")
         	$HOME/.config/rofi/scripts/powermenu
         ;;
+    	"$setup")
+        	$HOME/.config/rofi/scripts/setup
+        ;;   
     	"$utilities")
         	$HOME/.config/rofi/scripts/utils
         ;;   

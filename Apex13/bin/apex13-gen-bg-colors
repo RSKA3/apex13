@@ -1,0 +1,5 @@
+#!/bin/bash
+
+matugen image ~/.config/apex13/current/background 
+
+systemctl --user restart waybar

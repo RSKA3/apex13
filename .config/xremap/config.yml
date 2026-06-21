@@ -1,7 +1,9 @@
 keymap:
   - name: Firefox Specific Remaps
     application:
-      only: firefox
+      only: 
+        - firefox
+        - helium
     remap:
       Ctrl-j: CONTROL_L-pageup
       Ctrl-semicolon: CONTROL_L-pagedown

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-shutdown=' Shutdown'
-reboot=' Reboot'
-lock=' Lock'
-suspend=' Suspend'
-logout=' Logout'
+shutdown='  Shutdown'
+reboot='  Reboot'
+lock='  Lock'
+suspend='  Suspend'
+logout='  Logout'
 
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 

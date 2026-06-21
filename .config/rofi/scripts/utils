@@ -1,28 +1,29 @@
 #!/usr/bin/env bash
 
-wifi="󰤥 Wifi"
-bluetooth="󰂯 Bluetooth"
-audio="󰋋 Audio"
-monitors="📺 Monitors"
+capture='  Capture'
+calculator='󰪚  Calculator'
+clipboard='🗎  Clipboard'
+activity="  Activity"
 
-options="$wifi\n$bluetooth\n$audio\n$monitors"
+options="$capture\n$calculator\n$clipboard\n$activity"
 
 chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Action:")
 
 case "$chosen" in
-	"$wifi")
-        	alacritty -e impala
+	"$capture")
+        	$HOME/.config/rofi/scripts/capture
         ;;
-    	"$bluetooth")
-        	alacritty -e bluetui
-        ;;
-    	"$audio")
-        	alacritty -e wiremix
-        ;;
-	"$monitors")
-		alacritty -e nirimon
+    	"$calculator")
+    		rofi -show calc -modi calc -no-show-match -no-sort
+    	;;
+	"$clipboard")
+		cliphist list | rofi -dmenu | cliphist decode | wl-copy
+   	;;
+	"$activity")
+		alacritty -e btop 
 	;;
-    *)
+	*)
         exit 0
         ;;
 esac
+

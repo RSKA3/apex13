@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# apex13-set-bg <path-to-image>
+
+# check that user provided arg, not 0 length string
+if [[ -z $1 ]]; then
+  echo "Usage: apex13-set-bg <path-to-image>" >&2
+  exit 1
+fi
+
+BACKGROUND="$(realpath "$1")"
+CURRENT_BACKGROUND_LINK="$HOME/.config/apex13/current/background"
+
+# check that $BACKGROUND is valid file
+if [[ ! -f "$BACKGROUND" ]]; then
+  echo "File does not exist: $BACKGROUND" >&2
+  exit 1
+fi
+
+ln -nsf "$BACKGROUND" "$CURRENT_BACKGROUND_LINK"
+
+systemctl --user restart swaybg

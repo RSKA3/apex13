@@ -2,8 +2,28 @@
 
 [templates.rofi_colors]
 input_path = '~/.config/matugen/templates/rofi.rasi'
-output_path = '~/Themes/Colorschemes/rofi.rasi'
+output_path = '~/.config/rofi/themes/colors.rasi'
 
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi-theme.toml'
 output_path = '~/.config/yazi/theme.toml'
+
+[templates.waybar_colors]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/tokens/colors.css' 
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk3.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk4.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/current.theme'

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+screenshot='  Screenshot'
+screen='  Screenshot screen'
+window='  Screenshot window'
+pick_color='󰃉  Color'
+
+options="$screenshot\n$screen\n$window\n$pick_color"
+
+choice=$(echo -e "$options" | rofi -dmenu -i -p "Go...")
+[ $? = 0 ] || exit
+
+case "$choice" in
+	"$screenshot")
+        	niri msg action screenshot	
+        ;;
+	"$screen")
+        	niri msg action screenshot-screen	
+        ;;
+    	"$window")
+        	niri msg action screenshot-window
+        	
+        ;;
+    	"$pick_color")
+        	alacritty -e niri msg pick-color 	
+        ;;
+    *)
+        exit 0
+        ;;
+esac

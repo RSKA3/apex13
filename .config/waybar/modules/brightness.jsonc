@@ -1,10 +1,10 @@
 {
 	"backlight": {
-	    "format": " {icon} {percent}% ",
+	    "format": "{icon} {percent}%",
 	    "format-icons": ["", "", "", "", "", "", "", "", ""]
 	},
 	"custom/monitors": {
-		"format": "📺",
+		"format": "󰍹 ",
     		"tooltip": false,
 		"on-click": "alacritty -e nirimon"
 	}
